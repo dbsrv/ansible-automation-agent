@@ -1,0 +1,10 @@
+---
+
+## Automation Agent path and filename
+automation_agent_path: http://chexmondbutl001.ch.expeso.com:8080/download/agent/automation/
+automation_agent_filename: mongodb-mms-automation-agent-manager-2.5.15.1526-1.x86_64.rpm
+
+## Automation Agent configuration
+mongodb_mms_group_id: "56c4a7b4498ec7b26610aed9"
+mongodb_mms_api_key: "480245b5db1cc6bfd6d250709e58fb88"
+mongodb_mms_base_url: "http://chexmondbutl001.ch.expeso.com:8080"
