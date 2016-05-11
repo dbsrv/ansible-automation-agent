@@ -1,4 +1,4 @@
-# ansible-opsmanager
+# Install Automation Agent using Ansible
 
 This document describes how to use Ansible to install MongoDB Ops Manager **Automation Agent**. Unlike Chef or Puppet, Ansible does not require an agent on a node, instead it uses SSH to access a node remotely. Simply assign a host to run Ansible, then provide Ansible a list of nodes to install Automation Agent.
 
