@@ -1,12 +1,12 @@
 ---
 - name: Download automation agent
-  command: curl -OL "{{ automation_agent_path }}/{{ automation_agent_filename }}"
+  get_url: url={{ automation_agent_pkg }} dest=/tmp/automation-agent.rpm
 
-- name: Install automation agent
-  command: sudo rpm -U {{ automation_agent_filename }}
+- name: Install automation agent (RPM pkg ok)
+  yum: name: /tmp/automation-agent.rpm state: present
 
 - name: Configure automation agent
   template: src=automation-agent.config.j2 dest=/etc/mongodb-mms/automation-agent.config
 
-- name: Start automation agent
-  service: name=mongodb-mms-automation-agent state=started
+- name: Start automation agent, and enable start on boot
+  service: name=mongodb-mms-automation-agent state=started enabled=yes
