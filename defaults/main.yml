@@ -1,9 +1,12 @@
 ---
 
+## User to ssh and perform task
+initial_user: root
+
 ## Automation Agent path and filename
-automation_agent_pkg: http://chexmondbutl001.ch.expeso.com:8080/download/agent/automation/mongodb-mms-automation-agent-manager-2.5.15.1526-1.x86_64.rpm
+automation_agent_pkg: http://192.168.241.134:8080/download/agent/automation/mongodb-mms-automation-agent-manager-2.5.17.1604-1.x86_64.rpm
 
 ## Automation Agent configuration
-mongodb_mms_group_id: "56c4a7b4498ec7b26610aed9"
-mongodb_mms_api_key: "480245b5db1cc6bfd6d250709e58fb88"
-mongodb_mms_base_url: "http://chexmondbutl001.ch.expeso.com:8080"
+mongodb_mms_group_id: "574735e6ec2ea11b4a066639"
+mongodb_mms_api_key: "206e2ec9bf362ebcb5f4ec46fe38fde0"
+mongodb_mms_base_url: "http://192.168.241.134:8080"

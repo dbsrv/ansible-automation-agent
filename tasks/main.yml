@@ -1,9 +1,10 @@
 ---
+
 - name: Download automation agent
-  get_url: url={{ automation_agent_pkg }} dest=/tmp/automation-agent.rpm
+  get_url: url={{automation_agent_pkg}} dest=/tmp/automation-agent.rpm
 
 - name: Install automation agent (RPM pkg ok)
-  yum: name: /tmp/automation-agent.rpm state: present
+  yum: name=/tmp/automation-agent.rpm state=present
 
 - name: Configure automation agent
   template: src=automation-agent.config.j2 dest=/etc/mongodb-mms/automation-agent.config

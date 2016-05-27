@@ -1,0 +1,2 @@
+[nodes]
+192.168.241.135		ansible_user=root
