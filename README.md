@@ -4,11 +4,11 @@ This document describes how to use Ansible to install **MongoDB Ops Manager Auto
 
 For more on Ansible, read [How Ansible Works](https://www.ansible.com/how-ansible-works).
 
-*Disclaimer*: This playbook is designed for Fedora distribution of Linux only
+*Disclaimer*: This playbook is designed for RPM distribution of Linux only (RedHat/Fedora/CentOS)
 
 ### Install Ansible
 
-You'll need a dedicated host to run Ansible.  Follow [installation for RedHat/Fedora/CentOS:](http://docs.ansible.com/ansible/intro_installation.html#latest-release-via-yum)
+You'll need a dedicated host to run Ansible.  Follow [installation guide](http://docs.ansible.com/ansible/intro_installation.html#latest-release-via-yum), or simply these steps:
 
 1) Configure EPEL
 ```bash
