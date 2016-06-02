@@ -45,9 +45,9 @@ mms_base_url:		      "http://opsmanager:8080"
 ## Automation Agent configuration (optional)
 mms_config_backup:	  "/var/lib/mongodb-mms-automation/mms-cluster-config-backup.json"
 log_file:             "/var/log/mongodb-mms-automation/automation-agent.log"
-log_level:		        "INFO"
-max_log_files:		    10
-max_log_file_size:	  268435456
+log_level:            "INFO"
+max_log_files:        10
+max_log_file_size:    268435456
 ```
 
 3) Run playbook
