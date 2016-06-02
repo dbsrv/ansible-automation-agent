@@ -38,9 +38,9 @@ server2
 automation_agent_pkg: http://opsmanager:8080/download/agent/automation/mongodb-mms-automation-agent-manager-latest.x86_64.rpm
 
 ## Automation Agent configuration (required)
-mms_group_id:       "574735e6ec2ea11b4a000000"
-mms_api_key:        "206e2ec9bf362ebcb5f4ec46fe300000"
-mms_base_url:       "http://opsmanager:8080"
+mms_group_id:         "574735e6ec2ea11b4a000000"
+mms_api_key:          "206e2ec9bf362ebcb5f4ec46fe300000"
+mms_base_url:         "http://opsmanager:8080"
 
 ## Automation Agent configuration (optional)
 mms_config_backup:	  "/var/lib/mongodb-mms-automation/mms-cluster-config-backup.json"
