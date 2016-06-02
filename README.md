@@ -8,7 +8,7 @@ For more on Ansible, read [How Ansible Works](https://www.ansible.com/how-ansibl
 
 ### Install Ansible
 
-You'll need a dedicated host to run Ansible.  Follow [installation guide](http://docs.ansible.com/ansible/intro_installation.html#latest-release-via-yum), or simply these steps:
+You'll need a dedicated host to run Ansible.  Follow [installation guide](http://docs.ansible.com/ansible/intro_installation.html#latest-release-via-yum), or these two easy steps:
 
 1) Configure EPEL
 ```bash
