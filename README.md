@@ -58,7 +58,7 @@ Logs are kept in `log/playbook.log`
 
 *Tip*: for troubleshooting purpose, increase verbosity with `-v`, up to `-vvvv`. E.g
 ```
-ansible-playbook -i hosts install.yml --user johnny -vvvv`
+ansible-playbook -i hosts install.yml --user johnny -vvvv
 ```
 
 ### Ansible Config
