@@ -54,8 +54,9 @@ max_log_file_size:    268435456
 ```bash
 ansible-playbook -i hosts install.yml --user johnny
 ```
-Logs are kept in `log/playbook.log`
-*Tip: increase verbosity with `-v`, up to `-vvvv`. E.g
+Logs are kept in `log/playbook.log`  
+
+*Tip*: for troubleshooting purpose, increase verbosity with `-v`, up to `-vvvv`. E.g
 `ansible-playbook -i hosts install.yml --user johnny -vvvv`
 
 ### Ansible Config
