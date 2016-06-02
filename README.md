@@ -75,4 +75,4 @@ ask_pass =            True
 become =              True
 become_ask_pass =     True
 ```
-[Full list of ansible config](http://docs.ansible.com/ansible/intro_configuration.html)
+[Description and full list of ansible config](http://docs.ansible.com/ansible/intro_configuration.html)
