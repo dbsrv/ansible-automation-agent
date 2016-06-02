@@ -1,6 +1,6 @@
 # Install Automation Agent using Ansible
 
-This document describes how to use Ansible to install **MongoDB Ops Manager Automation Agent**. Unlike Chef or Puppet, Ansible does not require an agent on a node, instead it uses SSH to access a node and execute tasks remotely. Simply assign a host to install and run Ansible, then provide a list of servers (`hosts`) for Automation Agent installation.
+This document describes how to use Ansible to install **MongoDB Ops Manager Automation Agent**. Unlike Chef or Puppet, Ansible does not require an agent on a node, instead it uses SSH to access a node and execute tasks remotely. Simply assign a host to install and run Ansible, then provide a list of remote servers (`hosts`) where Automation Agent to be installed.
 
 For more on Ansible, read [How Ansible Works](https://www.ansible.com/how-ansible-works).
 
@@ -23,7 +23,7 @@ sudo yum install ansible
 
 ### Usage
 
-1) Edit list of `hosts`, e.g.
+1) Edit list of remote `hosts`, e.g.
 ```
 [servers]
 server1
