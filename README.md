@@ -6,6 +6,7 @@ For more on Ansible, read [How Ansible Works](https://www.ansible.com/how-ansibl
 
 ### Install Ansible
 
+You'll need a dedicated host to run Ansible.
 [Installation on RedHat/Fedora/CentOS:](http://docs.ansible.com/ansible/intro_installation.html#latest-release-via-yum)
 
 1) Configure EPEL
