@@ -1,5 +1,0 @@
----
-# file: site.yml
-- hosts: all
-  tasks:
-    - include: tasks/main.yml
