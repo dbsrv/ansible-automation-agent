@@ -29,7 +29,7 @@ sudo yum install ansible
 server1
 server2
 ```
-
+(replace `server1`, `server2`, ..., with FQDN or IP address of remote servers)
 2) Edit default variables in `roles/install/default/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
 ```
 ---
