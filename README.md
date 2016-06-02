@@ -76,3 +76,36 @@ become =              True
 become_ask_pass =     True
 ```
 [Description and full list of ansible config](http://docs.ansible.com/ansible/intro_configuration.html)
+
+### Example
+```bash
+johnny@ansible:~/ansible$ ansible-playbook -i hosts install.yml --user johnny
+SSH password: 
+SUDO password[defaults to SSH password]: 
+
+PLAY [all] *********************************************************************
+
+TASK [setup] *******************************************************************
+ok: [192.168.241.135]
+
+TASK [install : Download automation agent] *************************************
+changed: [192.168.241.135]
+
+TASK [install : Install automation agent] **************************************
+changed: [192.168.241.135]
+
+TASK [install : Set directory attribute where config file is kept] *************
+changed: [192.168.241.135]
+
+TASK [install : Create Automation Agent config file] ***************************
+changed: [192.168.241.135]
+
+TASK [install : Configure Automation Agent config file] ************************
+changed: [192.168.241.135]
+
+TASK [install : Start automation agent, and enable start on boot] **************
+changed: [192.168.241.135]
+
+PLAY RECAP *********************************************************************
+192.168.241.135            : ok=7    changed=6    unreachable=0    failed=0   
+```
