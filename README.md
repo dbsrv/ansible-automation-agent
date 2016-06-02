@@ -86,26 +86,26 @@ SUDO password[defaults to SSH password]:
 PLAY [all] *********************************************************************
 
 TASK [setup] *******************************************************************
-ok: [192.168.241.135]
+ok: [server1]
 
 TASK [install : Download automation agent] *************************************
-changed: [192.168.241.135]
+changed: [server1]
 
 TASK [install : Install automation agent] **************************************
-changed: [192.168.241.135]
+changed: [server1]
 
 TASK [install : Set directory attribute where config file is kept] *************
-changed: [192.168.241.135]
+changed: [server1]
 
 TASK [install : Create Automation Agent config file] ***************************
-changed: [192.168.241.135]
+changed: [server1]
 
 TASK [install : Configure Automation Agent config file] ************************
-changed: [192.168.241.135]
+changed: [server1]
 
 TASK [install : Start automation agent, and enable start on boot] **************
-changed: [192.168.241.135]
+changed: [server1]
 
 PLAY RECAP *********************************************************************
-192.168.241.135            : ok=7    changed=6    unreachable=0    failed=0   
+server1            : ok=7    changed=6    unreachable=0    failed=0   
 ```
