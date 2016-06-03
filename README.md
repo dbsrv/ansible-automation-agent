@@ -70,6 +70,7 @@ host_key_checking =   False
 retry_files_enabled = False
 log_path =            ./log/playbook.log
 ask_pass =            True
+command_warnings =    False
 
 [privilege_escalation]
 become =              True
