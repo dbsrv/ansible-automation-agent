@@ -109,3 +109,6 @@ changed: [server1]
 PLAY RECAP *********************************************************************
 server1            : ok=7    changed=6    unreachable=0    failed=0   
 ```
+
+### Reference
+[Install the Automation Agent with rpm Packages](https://docs.cloud.mongodb.com/tutorial/install-automation-agent-with-rpm-package/)
