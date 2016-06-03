@@ -7,10 +7,10 @@
   yum: name=/tmp/automation-agent.rpm state=present
 
 - name: Set directory attribute where config file is kept
-  file: state=directory path=/etc/mongodb-mms owner=mongod group=mongod mode=0755
+  file: state=directory path=/etc/mongodb-mms owner=mongod group=mongod mode=0600
 
 - name: Create Automation Agent config file
-  file: state=touch path=/etc/mongodb-mms/automation-agent.config owner=mongod group=mongod mode=0755
+  file: state=touch path=/etc/mongodb-mms/automation-agent.config owner=mongod group=mongod mode=0600
 
 - name: Configure Automation Agent config file
   shell: >
@@ -22,6 +22,18 @@
     echo -e 'logLevel={{log_level}}' >> /etc/mongodb-mms/automation-agent.config &&
     echo -e 'maxLogFiles={{max_log_files}}' >> /etc/mongodb-mms/automation-agent.config &&
     echo -e 'maxLogFileSize={{max_log_file_size}}' >> /etc/mongodb-mms/automation-agent.config
+
+- name: Collect status on /data directory (/data is required for Automation Agent)
+  stat: path=/data
+  register: p  
+
+- name: Change ownership on /data to mongod (if exists)
+  stat: state=directory path=/data owner=mongod group=mongod mode=0755
+  when: p.stat.isdir is defined and p.stat.isdir
+
+- name: Create data directory and set ownership (if not exist)
+  file: state=directory path=/data owner=mongod group=mongod mode=0755
+  when: p.stat.isdir is defined and p.stat.isdir = False
 
 - name: Start automation agent, and enable start on boot
   service: name=mongodb-mms-automation-agent state=started enabled=yes
