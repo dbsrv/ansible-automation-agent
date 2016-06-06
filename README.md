@@ -72,9 +72,11 @@ If the result shows Automation Agent is already running on a remote host. You sh
 ```bash
 ansible-playbook -i hosts install.yml --user johnny
 ```
+
+### Tips
 Logs are kept in `log/playbook.log`  
 
-*Tip*: for troubleshooting purpose, increase verbosity with `-v`, up to `-vvvv`. E.g
+For troubleshooting purpose, run commands `-v`, up to `-vvvv`, to increase verbosity. E.g
 ```
 ansible-playbook -i hosts install.yml --user johnny -vvvv
 ```
@@ -95,7 +97,7 @@ become_ask_pass =     True
 ```
 [Description and full list of ansible config](http://docs.ansible.com/ansible/intro_configuration.html)
 
-### Example
+### Example Play Output
 ```bash
 johnny@ansible:~/ansible$ ansible-playbook -i hosts install.yml --user johnny
 SSH password: 
