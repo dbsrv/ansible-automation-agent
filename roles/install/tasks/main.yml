@@ -3,14 +3,16 @@
 - name: Download automation agent
   get_url: url={{automation_agent_pkg}} dest=/tmp/automation-agent.rpm
 
+- name: Check for existing Automation Agent config file
+  stat: path=/etc/mongodb-mms/automation-agent.config
+  register: config_file
+
+- name: Back up Automation Agent config file if exists
+  shell: mv /etc/mongodb-mms/automation-agent.config /etc/mongodb-mms/automation-agent.config.bak
+  when: config_file.stat.exists
+
 - name: Install automation agent
   yum: name=/tmp/automation-agent.rpm state=present
-
-- name: Set directory attribute where config file is kept
-  file: state=directory path=/etc/mongodb-mms owner=mongod group=mongod mode=0755
-
-- name: Create Automation Agent config file
-  file: state=touch path=/etc/mongodb-mms/automation-agent.config owner=mongod group=mongod mode=0755
 
 - name: Configure Automation Agent config file
   shell: >
@@ -23,24 +25,11 @@
     echo -e 'maxLogFiles={{max_log_files}}' >> /etc/mongodb-mms/automation-agent.config &&
     echo -e 'maxLogFileSize={{max_log_file_size}}' >> /etc/mongodb-mms/automation-agent.config
 
-- name: Collect status on /data directory (/data is required for Automation Agent)
-  stat: path=/data
-  register: p  
-
-- name: If /data exists, set ownership on /data to 'mongod'
-  stat: state=directory path=/data owner=mongod group=mongod mode=0755
-  when: p.stat.isdir is defined and p.stat.isdir
-
-- name: If /data not exists, create /data directory and set ownership to 'mongod'
-  file: state=directory path=/data owner=mongod group=mongod mode=0755
-  when: p.stat.isdir is defined and p.stat.isdir == False
-
 - name: Start Automation Agent, and enable start on boot
   service: name=mongodb-mms-automation-agent state=started enabled=yes
 
-- name: Confirm Automation Agent is running (collecting service status)
+- name: Confirm Automation Agent is running
   shell: service mongodb-mms-automation-agent status
-  register: status_output  
-
-- name: Display Automation Agent service status
-  debug: var=status_output.stdout
+  register: agent_status
+  failed_when: "'NOT' in agent_status.stdout"
+  changed_when: False
