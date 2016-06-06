@@ -51,7 +51,28 @@ max_log_files:        10
 max_log_file_size:    268435456
 ```
 
-3) Run playbook
+3) (Optional but recommended) Check status on remote `hosts`
+Automation Agent should be not running or not installed. Run this ad-hoc Ansible command:
+```bash
+ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
+```
+Results should be:
+```
+server1 | FAILED | rc=3 >>
+mongodb-mms-automation-agent: unrecognized service
+```
+Or
+```
+server1 | FAILED | rc=3 >>
+mongodb-mms-automation-agent is NOT running
+```
+If the result shows Automation Agent is already running on a remote host. You should take it off the list of `hosts` and inspect it manually. It may be already automated by Ops Manager.
+```
+server1 | SUCCESS | rc=0 >>
+mongodb-mms-automation-agent is running
+```
+
+4) Run playbook
 ```bash
 ansible-playbook -i hosts install.yml --user johnny
 ```
