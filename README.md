@@ -97,9 +97,9 @@ become_ask_pass =     True
 ```
 [Description and full list of ansible config](http://docs.ansible.com/ansible/intro_configuration.html)
 
-### Example Play Output
+### Example Output
 ```bash
-johnny@ansible:~/ansible$ ansible-playbook -i hosts install.yml --user johnny
+johnny@server1:~/ansible$ ansible-playbook -i hosts install.yml --user johnny
 SSH password: 
 SUDO password[defaults to SSH password]: 
 
@@ -111,23 +111,26 @@ ok: [server1]
 TASK [install : Download automation agent] *************************************
 changed: [server1]
 
+TASK [install : Check for existing Automation Agent config file] ***************
+ok: [server1]
+
+TASK [install : Back up Automation Agent config file if exists] ****************
+skipping: [server1]
+
 TASK [install : Install automation agent] **************************************
-changed: [server1]
-
-TASK [install : Set directory attribute where config file is kept] *************
-changed: [server1]
-
-TASK [install : Create Automation Agent config file] ***************************
 changed: [server1]
 
 TASK [install : Configure Automation Agent config file] ************************
 changed: [server1]
 
-TASK [install : Start automation agent, and enable start on boot] **************
+TASK [install : Start Automation Agent, and enable start on boot] **************
 changed: [server1]
 
+TASK [install : Confirm Automation Agent is running] ***************************
+ok: [server1]
+
 PLAY RECAP *********************************************************************
-server1            : ok=7    changed=6    unreachable=0    failed=0   
+192.168.241.135            : ok=7    changed=4    unreachable=0    failed=0   
 ```
 
 ### Reference
