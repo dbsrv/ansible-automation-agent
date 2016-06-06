@@ -56,7 +56,7 @@ Automation Agent should be not installed or not running. Run this [ad-hoc](http:
 ```bash
 ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
 ```
-Results should be:
+Results should be either:
 ```
 server1 | FAILED | rc=3 >>
 mongodb-mms-automation-agent: unrecognized service
