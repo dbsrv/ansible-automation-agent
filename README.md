@@ -70,6 +70,17 @@ If the result shows Automation Agent is already running on a remote host. You sh
 ansible-playbook -i hosts install.yml --user johnny
 ```
 
+### Verify Installation
+Verify installation with:
+```bash
+ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
+```
+You should see successful messages:
+```
+server1 | SUCCESS | rc=0 >>
+mongodb-mms-automation-agent is running
+```
+
 ### Tips
 Logs are kept in `log/playbook.log`  
 
