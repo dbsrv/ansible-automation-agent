@@ -67,10 +67,6 @@ server1 | FAILED | rc=3 >>
 mongodb-mms-automation-agent is NOT running
 ```
 If the result shows Automation Agent is already running on a remote host. You should take it off the list of `hosts` and inspect it manually. It may be already automated by Ops Manager.
-```
-server1 | SUCCESS | rc=0 >>
-mongodb-mms-automation-agent is running
-```
 
 4) Run playbook
 ```bash
