@@ -52,7 +52,7 @@ max_log_file_size:    268435456
 ```
 
 3) (Optional but recommended) Check status on remote `hosts`  
-Automation Agent should be not installed or not running. Run this ad-hoc Ansible command:
+Automation Agent should be not installed or not running. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
 ```bash
 ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
 ```
