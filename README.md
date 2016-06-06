@@ -130,7 +130,7 @@ TASK [install : Confirm Automation Agent is running] ***************************
 ok: [server1]
 
 PLAY RECAP *********************************************************************
-192.168.241.135            : ok=7    changed=4    unreachable=0    failed=0   
+server1            : ok=7    changed=4    unreachable=0    failed=0   
 ```
 
 ### Reference
