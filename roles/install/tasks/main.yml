@@ -8,7 +8,7 @@
   register: config_file
 
 - name: Back up Automation Agent config file if exists
-  shell: mv /etc/mongodb-mms/automation-agent.config /etc/mongodb-mms/automation-agent.config.bak
+  command: mv /etc/mongodb-mms/automation-agent.config /etc/mongodb-mms/automation-agent.config.bak
   when: config_file.stat.exists
 
 - name: Install automation agent
@@ -30,7 +30,7 @@
   register: data_dir  
 
 - name: If /data exists, set ownership to 'mongod'
-  shell: chown mongod:mongod /data
+  command: chown mongod:mongod /data
   when: data_dir.stat.isdir is defined and data_dir.stat.isdir
 
 - name: If /data not exists, create directory and set ownership to 'mongod'
@@ -41,7 +41,7 @@
   service: name=mongodb-mms-automation-agent state=started enabled=yes
 
 - name: Confirm Automation Agent is running
-  shell: service mongodb-mms-automation-agent status
+  command: service mongodb-mms-automation-agent status
   register: agent_status
   failed_when: "'NOT' in agent_status.stdout"
   changed_when: False
