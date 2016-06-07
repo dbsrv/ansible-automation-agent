@@ -25,6 +25,18 @@
     echo -e 'maxLogFiles={{max_log_files}}' >> /etc/mongodb-mms/automation-agent.config &&
     echo -e 'maxLogFileSize={{max_log_file_size}}' >> /etc/mongodb-mms/automation-agent.config
 
+- name: Collect status on /data directory
+  stat: path=/data
+  register: data_dir  
+
+- name: If /data exists, set ownership to 'mongod'
+  shell: chown mongod:mongod /data
+  when: data_dir.stat.isdir is defined and data_dir.stat.isdir
+
+- name: If /data not exists, create directory and set ownership to 'mongod'
+  shell: mkdir /data && chown mongod:mongod /data
+  when: data_dir.stat.exists == False
+
 - name: Start Automation Agent, and enable start on boot
   service: name=mongodb-mms-automation-agent state=started enabled=yes
 
