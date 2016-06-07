@@ -140,7 +140,7 @@ ansible-playbook -i hosts install.yml --user johnny -vvvv
 ```
 
 ### Ansible Config
-This playbook uses customized `ansible.cfg`. Feel free to modify.
+This playbook uses customized `ansible.cfg`. Leave it as it is, or modify to fit your need.
 ```
 [defaults]
 host_key_checking =   False
