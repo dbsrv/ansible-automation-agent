@@ -23,8 +23,8 @@ sudo yum install ansible
 
 ### Usage
 
-**1)** Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository
-If Git is not yet installed
+**1)** Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository  
+Install Git if it is not yet installed
 ```
 yum install git
 ```
@@ -34,6 +34,7 @@ cd ansible
 git init
 git clone https://github.com/dbsrv/ansible-automation-agent.git
 ```
+If the host that runs Ansible has no http access, you can checkout the repository at another server, zip it, and transfer back to the host.  
 
 **2)** Edit list of remote `hosts`, e.g.
 ```
