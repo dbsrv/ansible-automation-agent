@@ -23,7 +23,19 @@ sudo yum install ansible
 
 ### Usage
 
-1) Edit list of remote `hosts`, e.g.
+**1)** Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository  
+Install Git if it is not yet installed
+```
+yum install git
+```
+```
+git init
+git clone https://github.com/dbsrv/ansible-automation-agent.git
+cd ansible-automation-agent
+```
+If the host that runs Ansible has no http access, you can checkout the repository at another server, zip it, and transfer back to the host.  
+
+**2)** Edit list of remote `hosts`, e.g.
 ```
 [servers]
 server1
@@ -31,7 +43,7 @@ server2
 ```
 (replace `server1`, `server2`, ...`serverN`, with FQDN or IP address of remote servers)
 
-2) Edit default variables in `roles/install/default/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
+**3)** Edit default variables in `roles/install/default/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
 ```
 ---
 
@@ -51,19 +63,83 @@ max_log_files:        10
 max_log_file_size:    268435456
 ```
 
-3) Run playbook
+**4)** (Optional but recommended) Check status on remote `hosts`  
+Automation Agent should be not installed or not running. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
+```bash
+ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
+(replace `johnny` with your username) 
+```
+Results should be either:
+```
+server1 | FAILED | rc=3 >>
+mongodb-mms-automation-agent: unrecognized service
+                   Or
+mongodb-mms-automation-agent is NOT running
+```
+If the result shows Automation Agent is already running on a remote host. You should take it off the list of `hosts` and inspect it manually. It may be already automated by Ops Manager.
+
+**5)** Run playbook
 ```bash
 ansible-playbook -i hosts install.yml --user johnny
 ```
+
+### Example Output
+```bash
+johnny@server1:~/ansible$ ansible-playbook -i hosts install.yml --user johnny
+SSH password: 
+SUDO password[defaults to SSH password]: 
+
+PLAY [all] *********************************************************************
+
+TASK [setup] *******************************************************************
+ok: [server1]
+
+TASK [install : Download automation agent] *************************************
+changed: [server1]
+
+TASK [install : Check for existing Automation Agent config file] ***************
+ok: [server1]
+
+TASK [install : Back up Automation Agent config file if exists] ****************
+skipping: [server1]
+
+TASK [install : Install automation agent] **************************************
+changed: [server1]
+
+TASK [install : Configure Automation Agent config file] ************************
+changed: [server1]
+
+TASK [install : Start Automation Agent, and enable start on boot] **************
+changed: [server1]
+
+TASK [install : Confirm Automation Agent is running] ***************************
+ok: [server1]
+
+PLAY RECAP *********************************************************************
+server1            : ok=7    changed=4    unreachable=0    failed=0   
+```
+
+### Verify Installation
+Verify installation with:
+```bash
+ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
+```
+You should see successful messages:
+```
+server1 | SUCCESS | rc=0 >>
+mongodb-mms-automation-agent is running
+```
+
+### Tips
 Logs are kept in `log/playbook.log`  
 
-*Tip*: for troubleshooting purpose, increase verbosity with `-v`, up to `-vvvv`. E.g
+For troubleshooting purpose, run commands `-v`, up to `-vvvv`, to increase verbosity. E.g
 ```
 ansible-playbook -i hosts install.yml --user johnny -vvvv
 ```
 
 ### Ansible Config
-This playbook uses customized `ansible.cfg`. Feel free to modify.
+This playbook uses customized `ansible.cfg`. Leave it as it is, or modify to fit your need.
 ```
 [defaults]
 host_key_checking =   False
@@ -78,38 +154,6 @@ become_ask_pass =     True
 ```
 [Description and full list of ansible config](http://docs.ansible.com/ansible/intro_configuration.html)
 
-### Example
-```bash
-johnny@ansible:~/ansible$ ansible-playbook -i hosts install.yml --user johnny
-SSH password: 
-SUDO password[defaults to SSH password]: 
-
-PLAY [all] *********************************************************************
-
-TASK [setup] *******************************************************************
-ok: [server1]
-
-TASK [install : Download automation agent] *************************************
-changed: [server1]
-
-TASK [install : Install automation agent] **************************************
-changed: [server1]
-
-TASK [install : Set directory attribute where config file is kept] *************
-changed: [server1]
-
-TASK [install : Create Automation Agent config file] ***************************
-changed: [server1]
-
-TASK [install : Configure Automation Agent config file] ************************
-changed: [server1]
-
-TASK [install : Start automation agent, and enable start on boot] **************
-changed: [server1]
-
-PLAY RECAP *********************************************************************
-server1            : ok=7    changed=6    unreachable=0    failed=0   
-```
-
 ### Reference
+[How Ansible Works](https://www.ansible.com/how-ansible-works)  
 [Install the Automation Agent with rpm Packages](https://docs.cloud.mongodb.com/tutorial/install-automation-agent-with-rpm-package/)
