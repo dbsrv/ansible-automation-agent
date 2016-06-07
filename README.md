@@ -24,6 +24,10 @@ sudo yum install ansible
 ### Usage
 
 **1)** Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository
+If Git is not yet installed
+```
+yum install git
+```
 ```
 mkdir ansible
 cd ansible
