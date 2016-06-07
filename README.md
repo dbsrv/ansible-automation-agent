@@ -84,41 +84,6 @@ If the result shows Automation Agent is already running on a remote host. You sh
 ansible-playbook -i hosts install.yml --user johnny
 ```
 
-### Verify Installation
-Verify installation with:
-```bash
-ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
-```
-You should see successful messages:
-```
-server1 | SUCCESS | rc=0 >>
-mongodb-mms-automation-agent is running
-```
-
-### Tips
-Logs are kept in `log/playbook.log`  
-
-For troubleshooting purpose, run commands `-v`, up to `-vvvv`, to increase verbosity. E.g
-```
-ansible-playbook -i hosts install.yml --user johnny -vvvv
-```
-
-### Ansible Config
-This playbook uses customized `ansible.cfg`. Feel free to modify.
-```
-[defaults]
-host_key_checking =   False
-retry_files_enabled = False
-log_path =            ./log/playbook.log
-ask_pass =            True
-command_warnings =    False
-
-[privilege_escalation]
-become =              True
-become_ask_pass =     True
-```
-[Description and full list of ansible config](http://docs.ansible.com/ansible/intro_configuration.html)
-
 ### Example Output
 ```bash
 johnny@server1:~/ansible$ ansible-playbook -i hosts install.yml --user johnny
@@ -154,6 +119,41 @@ ok: [server1]
 PLAY RECAP *********************************************************************
 server1            : ok=7    changed=4    unreachable=0    failed=0   
 ```
+
+### Verify Installation
+Verify installation with:
+```bash
+ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
+```
+You should see successful messages:
+```
+server1 | SUCCESS | rc=0 >>
+mongodb-mms-automation-agent is running
+```
+
+### Tips
+Logs are kept in `log/playbook.log`  
+
+For troubleshooting purpose, run commands `-v`, up to `-vvvv`, to increase verbosity. E.g
+```
+ansible-playbook -i hosts install.yml --user johnny -vvvv
+```
+
+### Ansible Config
+This playbook uses customized `ansible.cfg`. Feel free to modify.
+```
+[defaults]
+host_key_checking =   False
+retry_files_enabled = False
+log_path =            ./log/playbook.log
+ask_pass =            True
+command_warnings =    False
+
+[privilege_escalation]
+become =              True
+become_ask_pass =     True
+```
+[Description and full list of ansible config](http://docs.ansible.com/ansible/intro_configuration.html)
 
 ### Reference
 [How Ansible Works](https://www.ansible.com/how-ansible-works)  
