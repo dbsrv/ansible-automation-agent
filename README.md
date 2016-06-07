@@ -143,4 +143,5 @@ server1            : ok=7    changed=4    unreachable=0    failed=0
 ```
 
 ### Reference
+[How Ansible Works](https://www.ansible.com/how-ansible-works)
 [Install the Automation Agent with rpm Packages](https://docs.cloud.mongodb.com/tutorial/install-automation-agent-with-rpm-package/)
