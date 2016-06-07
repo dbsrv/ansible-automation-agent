@@ -23,12 +23,12 @@ sudo yum install ansible
 
 ### Usage
 
-**1)** Prepare Git and pull this repository
+**1)** Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository
 ```
 mkdir ansible
 cd ansible
 git init
-git pull https://github.com/dbsrv/ansible-automation-agent.git
+git clone https://github.com/dbsrv/ansible-automation-agent.git
 ```
 
 **2)** Edit list of remote `hosts`, e.g.
