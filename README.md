@@ -23,7 +23,15 @@ sudo yum install ansible
 
 ### Usage
 
-**1)** Edit list of remote `hosts`, e.g.
+**1)** Prepare Git and pull this repository
+```
+mkdir ansible
+cd ansible
+git init
+git pull https://github.com/dbsrv/ansible-automation-agent.git
+```
+
+**2)** Edit list of remote `hosts`, e.g.
 ```
 [servers]
 server1
@@ -31,7 +39,7 @@ server2
 ```
 (replace `server1`, `server2`, ...`serverN`, with FQDN or IP address of remote servers)
 
-**2)** Edit default variables in `roles/install/default/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
+**3)** Edit default variables in `roles/install/default/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
 ```
 ---
 
@@ -51,7 +59,7 @@ max_log_files:        10
 max_log_file_size:    268435456
 ```
 
-**3)** (Optional but recommended) Check status on remote `hosts`  
+**4)** (Optional but recommended) Check status on remote `hosts`  
 Automation Agent should be not installed or not running. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
 ```bash
 ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
@@ -66,7 +74,7 @@ mongodb-mms-automation-agent is NOT running
 ```
 If the result shows Automation Agent is already running on a remote host. You should take it off the list of `hosts` and inspect it manually. It may be already automated by Ops Manager.
 
-**4)** Run playbook
+**5)** Run playbook
 ```bash
 ansible-playbook -i hosts install.yml --user johnny
 ```
