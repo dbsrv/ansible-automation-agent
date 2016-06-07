@@ -29,10 +29,9 @@ Install Git if it is not yet installed
 yum install git
 ```
 ```
-mkdir ansible
-cd ansible
 git init
 git clone https://github.com/dbsrv/ansible-automation-agent.git
+cd ansible-automation-agent
 ```
 If the host that runs Ansible has no http access, you can checkout the repository at another server, zip it, and transfer back to the host.  
 
