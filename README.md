@@ -14,7 +14,7 @@ You'll need a dedicated host to run Ansible. You can use the host where Ops Mana
 ```bash
 ## RHEL/CentOS 6 64-Bit ##
 wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-rpm -ivh epel-release-6-8.noarch.rpm
+sudo rpm -ivh epel-release-6-8.noarch.rpm
 ```
 2) Install Ansible
 ```bash
@@ -26,7 +26,7 @@ sudo yum install ansible
 **1)** Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository  
 Install Git if it is not yet installed
 ```
-yum install git
+sudo yum install git
 ```
 ```
 git init
