@@ -37,6 +37,9 @@ If the host that runs Ansible has no http access, you can checkout the repositor
 
 **2)** Edit list of remote `hosts`, e.g.
 ```
+vim hosts
+```
+```
 [servers]
 server1
 server2
@@ -44,6 +47,9 @@ server2
 (replace `server1`, `server2`, ...`serverN`, with FQDN or IP address of remote servers)
 
 **3)** Edit default variables in `roles/install/defaults/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
+```
+vim roles/install/defaults/main.yml
+```
 ```
 ---
 
@@ -107,6 +113,15 @@ TASK [install : Install automation agent] **************************************
 changed: [server1]
 
 TASK [install : Configure Automation Agent config file] ************************
+changed: [server1]
+
+TASK [install : Collect status on /data directory] *****************************
+ok: [server1]
+
+TASK [install : If /data exists, set ownership to 'mongod'] ********************
+skipping: [server1]
+
+TASK [install : If /data not exists, create directory and set ownership to 'mongod'] ***
 changed: [server1]
 
 TASK [install : Start Automation Agent, and enable start on boot] **************
