@@ -43,7 +43,7 @@ server2
 ```
 (replace `server1`, `server2`, ...`serverN`, with FQDN or IP address of remote servers)
 
-**3)** Edit default variables in `roles/install/default/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
+**3)** Edit default variables in `roles/install/defaults/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
 ```
 ---
 
