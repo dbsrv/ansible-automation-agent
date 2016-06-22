@@ -1,5 +1,12 @@
 ---
 
-- hosts: all
+- name: Playbook to install Automation Agent
+  hosts: all
+  vars_prompt:
+    - name: run_preflight
+      prompt: "Update OpenSSL?"
+      default: "Y"
+
   roles:
-    - install
+    - { role: preflight, when: run_preflight == "Y" }
+    - { role: install }
