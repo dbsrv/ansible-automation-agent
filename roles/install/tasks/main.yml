@@ -1,6 +1,12 @@
 ---
 
-- name: Download automation agent
+- name: Download OpenSSL
+  copy: src=openssl-1.0.1e-42.el6.x86_64.rpm dest=/tmp/openssl-1.0.1e-42.el6.x86_64.rpm
+
+- name: Install/Upgrade OpenSSL
+  yum: name=/tmp/openssl-1.0.1e-42.el6.x86_64.rpm state=latest
+
+- name: Download Automation Agent
   get_url: url={{automation_agent_pkg}} dest=/tmp/automation-agent.rpm
 
 - name: Check for existing Automation Agent config file

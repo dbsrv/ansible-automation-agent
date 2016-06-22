@@ -4,8 +4,8 @@
 automation_agent_pkg: http://192.168.241.134:8080/download/agent/automation/mongodb-mms-automation-agent-manager-latest.x86_64.rpm
 
 ## Automation Agent configuration (required)
-mms_group_id:		"574735e6ec2ea11b4a066639"
-mms_api_key:		"206e2ec9bf362ebcb5f4ec46fe38fde0"
+mms_group_id:		"576862ffec2ea1c7bee83576"
+mms_api_key:		"b49139e766a659764b006027cc19ce80"
 mms_base_url:		"http://192.168.241.134:8080"
 
 ## Automation Agent configuration (optional)
