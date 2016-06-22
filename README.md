@@ -109,22 +109,22 @@ SUDO password[defaults to SSH password]:
 
 PLAY [all] *********************************************************************
 
+TASK [setup] *******************************************************************
+ok: [server1]
+
 TASK [preflight : Collect status on OpenSSL] ***********************************
 changed: [server1]
 
 TASK [preflight : Perform Yum Update] ******************************************
-skipping: [server1]
-
-TASK [preflight : Download OpenSSL (openssl-1.0.1e-42.el6.x86_64.rpm)] *********
-skipping: [server1]
-
-TASK [preflight : Install/Upgrade OpenSSL] *************************************
-skipping: [server1]
-
-TASK [preflight : Confirm OpenSSL is in version "1.0.1e"] **********************
 ok: [server1]
 
-TASK [setup] *******************************************************************
+TASK [preflight : Download OpenSSL (openssl-1.0.1e-42.el6.x86_64.rpm)] *********
+ok: [server1]
+
+TASK [preflight : Install/Upgrade OpenSSL] *************************************
+ok: [server1]
+
+TASK [preflight : Confirm OpenSSL is in version "1.0.1e"] **********************
 ok: [server1]
 
 TASK [install : Download automation agent] *************************************
