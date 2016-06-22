@@ -94,7 +94,7 @@ If SELinux is enabled, *preflight* role would result in error. You can skip *pre
 ```bash
 Install/Update OpenSSL? [Y]: N
 ```
-You would have to install/update OpenSSL manually on each host.
+You would have to manually install/update OpenSSL on each host.
 
 **5)** Run playbook
 ```bash
