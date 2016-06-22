@@ -69,7 +69,8 @@ max_log_files:        10
 max_log_file_size:    268435456
 ```
 
-**4)** (Optional but recommended) Check status on remote `hosts`  
+**4)** (Optional but recommended) Check status on remote `hosts`
+
 **Check status on Automation Agent**:  
 Automation Agent should be not installed or not running. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
 ```bash
