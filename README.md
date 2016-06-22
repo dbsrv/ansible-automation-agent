@@ -70,6 +70,8 @@ max_log_file_size:    268435456
 ```
 
 **4)** (Optional but recommended) Check status on remote `hosts`  
+
+*Check status on Automation Agent*
 Automation Agent should be not installed or not running. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
 ```bash
 ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
@@ -83,6 +85,16 @@ mongodb-mms-automation-agent: unrecognized service
 mongodb-mms-automation-agent is NOT running
 ```
 If the result shows Automation Agent is already running on a remote host. You should take it off the list of `hosts` and inspect it manually. It may be already automated by Ops Manager.
+
+*Check status on SELinux*
+```bash
+ansible all -i hosts -a "sestatus" --user johnny
+```
+If SELinux is enabled, *preflight* role would result in error. You can skip *preflight* step when prompted:
+```bash
+Install/Update OpenSSL? [Y]: N
+```
+You would have to install/update OpenSSL manually on each host.
 
 **5)** Run playbook
 ```bash
