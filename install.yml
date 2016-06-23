@@ -4,7 +4,7 @@
   hosts: all
   vars_prompt:
     - name: run_preflight
-      prompt: "Update OpenSSL?"
+      prompt: "Install/Update OpenSSL?"
       default: "Y"
 
   roles:
