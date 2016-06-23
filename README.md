@@ -100,12 +100,18 @@ You would have to manually install/update OpenSSL on each host.
 ```bash
 ansible-playbook -i hosts install.yml --user johnny
 ```
-
+Enter password to SSH to `hosts`, and the password to SUDO (usually same as ssh password). Choose whether to install or update OpenSSL (default Y = Yes)
+```bash
+SSH password: 
+SUDO password[defaults to SSH password]: 
+Install/Update OpenSSL? [Y]: 
+```
 ### Example Output
 ```bash
 johnny@server1:~/ansible$ ansible-playbook -i hosts install.yml --user johnny
 SSH password: 
 SUDO password[defaults to SSH password]: 
+Install/Update OpenSSL? [Y]:
 
 PLAY [all] *********************************************************************
 
