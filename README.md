@@ -24,6 +24,7 @@ sudo yum install ansible
 
 Alternatively, download and extract this zipped Ansible repo:  
 https://github.com/dbsrv/ansible-automation-agent/raw/master/roles/preflight/files/ansiblepkg.tar.gz
+
 Install with this command:
 ```bash
 sudo yum localinstall ansiblepkg/*.rpm
