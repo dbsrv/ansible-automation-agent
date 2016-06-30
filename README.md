@@ -26,6 +26,8 @@ https://github.com/dbsrv/ansible-automation-agent/raw/master/roles/preflight/fil
 
 Do a yum localinstall:
 ```bash
+sudo mkdir ansiblepkg
+sudo tar -zxvf ansiblepkg.tar.gz ansiblepkg/
 sudo yum localinstall ansiblepkg/*.rpm
 ```
 
