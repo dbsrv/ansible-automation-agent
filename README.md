@@ -191,6 +191,9 @@ mongodb-mms-automation-agent is running
 ### Tips
 Logs are kept in `log/playbook.log`  
 
+If automation agent fails to start, refer to log file at Ops Manager console, or at  
+`sudo tail -n 200 /var/log/mongodb-mms-automation/automation-agent-fatal.log`
+
 For troubleshooting purpose, run commands `-v`, up to `-vvvv`, to increase verbosity. E.g
 ```
 ansible-playbook -i hosts install.yml --user johnny -vvvv
