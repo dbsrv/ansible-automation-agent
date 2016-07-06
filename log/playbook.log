@@ -1,0 +1,157 @@
+2016-06-29 10:23:13,672 p=101145 u=holee |  192.168.241.137 | SUCCESS | rc=0 >>
+mongodb-mms-automation-agent is running
+
+2016-06-29 10:23:46,019 p=101168 u=holee |  192.168.241.138 | FAILED | rc=1 >>
+mongodb-mms-automation-agent: unrecognized service
+
+2016-06-29 10:24:05,169 p=101219 u=holee |  PLAY [Playbook to install Automation Agent] ************************************
+2016-06-29 10:24:05,207 p=101219 u=holee |  TASK [setup] *******************************************************************
+2016-06-29 10:24:06,107 p=101219 u=holee |  ok: [192.168.241.138]
+2016-06-29 10:24:06,112 p=101219 u=holee |  TASK [preflight : Collect status on OpenSSL] ***********************************
+2016-06-29 10:24:06,169 p=101219 u=holee |  skipping: [192.168.241.138]
+2016-06-29 10:24:06,172 p=101219 u=holee |  TASK [preflight : Perform Yum Update] ******************************************
+2016-06-29 10:24:06,211 p=101219 u=holee |  skipping: [192.168.241.138]
+2016-06-29 10:24:06,215 p=101219 u=holee |  TASK [preflight : Download OpenSSL (openssl-1.0.1e-42.el6.x86_64.rpm)] *********
+2016-06-29 10:24:06,252 p=101219 u=holee |  skipping: [192.168.241.138]
+2016-06-29 10:24:06,256 p=101219 u=holee |  TASK [preflight : Install/Upgrade OpenSSL] *************************************
+2016-06-29 10:24:06,292 p=101219 u=holee |  skipping: [192.168.241.138]
+2016-06-29 10:24:06,295 p=101219 u=holee |  TASK [preflight : Confirm OpenSSL is in version "1.0.1e"] **********************
+2016-06-29 10:24:06,332 p=101219 u=holee |  skipping: [192.168.241.138]
+2016-06-29 10:24:06,336 p=101219 u=holee |  TASK [install : Download Automation Agent] *************************************
+2016-06-29 10:24:06,920 p=101219 u=holee |  changed: [192.168.241.138]
+2016-06-29 10:24:06,923 p=101219 u=holee |  TASK [install : Check for existing Automation Agent config file] ***************
+2016-06-29 10:24:07,247 p=101219 u=holee |  ok: [192.168.241.138]
+2016-06-29 10:24:07,251 p=101219 u=holee |  TASK [install : Back up Automation Agent config file if exists] ****************
+2016-06-29 10:24:07,284 p=101219 u=holee |  skipping: [192.168.241.138]
+2016-06-29 10:24:07,287 p=101219 u=holee |  TASK [install : Install automation agent] **************************************
+2016-06-29 10:24:24,715 p=101219 u=holee |  changed: [192.168.241.138]
+2016-06-29 10:24:24,719 p=101219 u=holee |  TASK [install : Configure Automation Agent config file] ************************
+2016-06-29 10:24:25,099 p=101219 u=holee |  changed: [192.168.241.138]
+2016-06-29 10:24:25,104 p=101219 u=holee |  TASK [install : Collect status on /data directory] *****************************
+2016-06-29 10:24:25,381 p=101219 u=holee |  ok: [192.168.241.138]
+2016-06-29 10:24:25,384 p=101219 u=holee |  TASK [install : If /data exists, set ownership to 'mongod'] ********************
+2016-06-29 10:24:25,417 p=101219 u=holee |  skipping: [192.168.241.138]
+2016-06-29 10:24:25,421 p=101219 u=holee |  TASK [install : If /data not exists, create directory and set ownership to 'mongod'] ***
+2016-06-29 10:24:25,669 p=101219 u=holee |  changed: [192.168.241.138]
+2016-06-29 10:24:25,671 p=101219 u=holee |  TASK [install : Start Automation Agent, and enable start on boot] **************
+2016-06-29 10:24:26,203 p=101219 u=holee |  changed: [192.168.241.138]
+2016-06-29 10:24:26,206 p=101219 u=holee |  TASK [install : Confirm Automation Agent is running] ***************************
+2016-06-29 10:24:26,527 p=101219 u=holee |  ok: [192.168.241.138]
+2016-06-29 10:24:26,530 p=101219 u=holee |  PLAY RECAP *********************************************************************
+2016-06-29 10:24:26,530 p=101219 u=holee |  192.168.241.138            : ok=9    changed=5    unreachable=0    failed=0   
+2016-07-01 11:35:53,391 p=112149 u=holee |  PLAY [Playbook to install Automation Agent] ************************************
+2016-07-01 11:35:53,448 p=112149 u=holee |  TASK [setup] *******************************************************************
+2016-07-01 11:35:55,375 p=112149 u=holee |  ok: [127.0.0.1]
+2016-07-01 11:35:55,379 p=112149 u=holee |  TASK [preflight : Collect status on OpenSSL] ***********************************
+2016-07-01 11:35:55,473 p=112149 u=holee |  skipping: [127.0.0.1]
+2016-07-01 11:35:55,477 p=112149 u=holee |  TASK [preflight : Perform Yum Update] ******************************************
+2016-07-01 11:35:55,555 p=112149 u=holee |  skipping: [127.0.0.1]
+2016-07-01 11:35:55,559 p=112149 u=holee |  TASK [preflight : Download OpenSSL (openssl-1.0.1e-42.el6.x86_64.rpm)] *********
+2016-07-01 11:35:55,628 p=112149 u=holee |  skipping: [127.0.0.1]
+2016-07-01 11:35:55,631 p=112149 u=holee |  TASK [preflight : Install/Upgrade OpenSSL] *************************************
+2016-07-01 11:35:55,702 p=112149 u=holee |  skipping: [127.0.0.1]
+2016-07-01 11:35:55,707 p=112149 u=holee |  TASK [preflight : Confirm OpenSSL is in version "1.0.1e"] **********************
+2016-07-01 11:35:55,782 p=112149 u=holee |  skipping: [127.0.0.1]
+2016-07-01 11:35:55,788 p=112149 u=holee |  TASK [install : Download Automation Agent] *************************************
+2016-07-01 11:35:56,334 p=112149 u=holee |  changed: [127.0.0.1]
+2016-07-01 11:35:56,338 p=112149 u=holee |  TASK [install : Check for existing Automation Agent config file] ***************
+2016-07-01 11:35:56,662 p=112149 u=holee |  ok: [127.0.0.1]
+2016-07-01 11:35:56,665 p=112149 u=holee |  TASK [install : Back up Automation Agent config file if exists] ****************
+2016-07-01 11:35:56,709 p=112149 u=holee |  skipping: [127.0.0.1]
+2016-07-01 11:35:56,714 p=112149 u=holee |  TASK [install : Install automation agent] **************************************
+2016-07-01 11:35:57,063 p=112149 u=holee |  fatal: [127.0.0.1]: FAILED! => {"changed": false, "failed": true, "module_stderr": "", "module_stdout": "\r\n\r\nTraceback (most recent call last):\r\n  File \"/tmp/ansible_sdZTbM/ansible_module_yum.py\", line 25, in <module>\r\n    import yum\r\nImportError: No module named yum\r\n", "msg": "MODULE FAILURE", "parsed": false}
+2016-07-01 11:35:57,064 p=112149 u=holee |  NO MORE HOSTS LEFT *************************************************************
+2016-07-01 11:35:57,066 p=112149 u=holee |  PLAY RECAP *********************************************************************
+2016-07-01 11:35:57,066 p=112149 u=holee |  127.0.0.1                  : ok=3    changed=1    unreachable=0    failed=1   
+2016-07-05 14:49:40,329 p=2643 u=holee |   [ERROR]: User interrupted execution
+
+2016-07-05 14:50:08,335 p=2648 u=holee |  192.168.241.143 | FAILED | rc=1 >>
+mongodb-mms-automation-agent: unrecognized service
+
+2016-07-05 14:50:08,341 p=2648 u=holee |  192.168.241.142 | FAILED | rc=1 >>
+mongodb-mms-automation-agent: unrecognized service
+
+2016-07-05 14:50:21,120 p=2703 u=holee |  PLAY [Playbook to install Automation Agent] ************************************
+2016-07-05 14:50:21,191 p=2703 u=holee |  TASK [setup] *******************************************************************
+2016-07-05 14:50:22,715 p=2703 u=holee |  ok: [192.168.241.142]
+2016-07-05 14:50:22,738 p=2703 u=holee |  ok: [192.168.241.143]
+2016-07-05 14:50:22,756 p=2703 u=holee |  TASK [preflight : Collect status on OpenSSL] ***********************************
+2016-07-05 14:50:23,547 p=2703 u=holee |  changed: [192.168.241.142]
+2016-07-05 14:50:23,568 p=2703 u=holee |  changed: [192.168.241.143]
+2016-07-05 14:50:23,581 p=2703 u=holee |  TASK [preflight : Perform Yum Update] ******************************************
+2016-07-05 14:50:23,684 p=2703 u=holee |  skipping: [192.168.241.142]
+2016-07-05 14:50:23,701 p=2703 u=holee |  skipping: [192.168.241.143]
+2016-07-05 14:50:23,708 p=2703 u=holee |  TASK [preflight : Download OpenSSL (openssl-1.0.1e-42.el6.x86_64.rpm)] *********
+2016-07-05 14:50:25,147 p=2703 u=holee |  changed: [192.168.241.143]
+2016-07-05 14:50:25,205 p=2703 u=holee |  changed: [192.168.241.142]
+2016-07-05 14:50:25,208 p=2703 u=holee |  TASK [preflight : Install/Upgrade OpenSSL] *************************************
+2016-07-05 14:50:25,809 p=2703 u=holee |  fatal: [192.168.241.142]: FAILED! => {"changed": true, "cmd": ["rpm", "-Uvh", "/tmp/openssl-1.0.1e-42.el6.x86_64.rpm"], "delta": "0:00:00.069017", "end": "2016-07-05 05:42:27.105220", "failed": true, "rc": 1, "start": "2016-07-05 05:42:27.036203", "stderr": "warning: /tmp/openssl-1.0.1e-42.el6.x86_64.rpm: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY\nerror: Failed dependencies:\n\tmake is needed by openssl-1.0.1e-42.el6.x86_64", "stdout": "", "stdout_lines": [], "warnings": ["Consider using yum, dnf or zypper module rather than running rpm"]}
+2016-07-05 14:50:25,825 p=2703 u=holee |  fatal: [192.168.241.143]: FAILED! => {"changed": true, "cmd": ["rpm", "-Uvh", "/tmp/openssl-1.0.1e-42.el6.x86_64.rpm"], "delta": "0:00:00.068654", "end": "2016-07-05 05:42:54.121439", "failed": true, "rc": 1, "start": "2016-07-05 05:42:54.052785", "stderr": "warning: /tmp/openssl-1.0.1e-42.el6.x86_64.rpm: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY\nerror: Failed dependencies:\n\tmake is needed by openssl-1.0.1e-42.el6.x86_64", "stdout": "", "stdout_lines": [], "warnings": ["Consider using yum, dnf or zypper module rather than running rpm"]}
+2016-07-05 14:50:25,826 p=2703 u=holee |  NO MORE HOSTS LEFT *************************************************************
+2016-07-05 14:50:25,828 p=2703 u=holee |  PLAY RECAP *********************************************************************
+2016-07-05 14:50:25,829 p=2703 u=holee |  192.168.241.142            : ok=3    changed=2    unreachable=0    failed=1   
+2016-07-05 14:50:25,830 p=2703 u=holee |  192.168.241.143            : ok=3    changed=2    unreachable=0    failed=1   
+2016-07-05 14:52:16,796 p=2890 u=holee |  PLAY [Playbook to install Automation Agent] ************************************
+2016-07-05 14:52:16,873 p=2890 u=holee |  TASK [setup] *******************************************************************
+2016-07-05 14:52:30,222 p=2890 u=holee |  ok: [192.168.241.143]
+2016-07-05 14:52:30,280 p=2890 u=holee |  ok: [192.168.241.142]
+2016-07-05 14:52:30,305 p=2890 u=holee |  TASK [preflight : Collect status on OpenSSL] ***********************************
+2016-07-05 14:52:30,429 p=2890 u=holee |  skipping: [192.168.241.142]
+2016-07-05 14:52:30,447 p=2890 u=holee |  skipping: [192.168.241.143]
+2016-07-05 14:52:30,457 p=2890 u=holee |  TASK [preflight : Perform Yum Update] ******************************************
+2016-07-05 14:52:30,570 p=2890 u=holee |  skipping: [192.168.241.142]
+2016-07-05 14:52:30,585 p=2890 u=holee |  skipping: [192.168.241.143]
+2016-07-05 14:52:30,594 p=2890 u=holee |  TASK [preflight : Download OpenSSL (openssl-1.0.1e-42.el6.x86_64.rpm)] *********
+2016-07-05 14:52:30,701 p=2890 u=holee |  skipping: [192.168.241.142]
+2016-07-05 14:52:30,718 p=2890 u=holee |  skipping: [192.168.241.143]
+2016-07-05 14:52:30,724 p=2890 u=holee |  TASK [preflight : Install/Upgrade OpenSSL] *************************************
+2016-07-05 14:52:30,819 p=2890 u=holee |  skipping: [192.168.241.142]
+2016-07-05 14:52:30,838 p=2890 u=holee |  skipping: [192.168.241.143]
+2016-07-05 14:52:30,850 p=2890 u=holee |  TASK [preflight : Confirm OpenSSL is in version "1.0.1e"] **********************
+2016-07-05 14:52:30,954 p=2890 u=holee |  skipping: [192.168.241.142]
+2016-07-05 14:52:30,970 p=2890 u=holee |  skipping: [192.168.241.143]
+2016-07-05 14:52:30,975 p=2890 u=holee |  TASK [install : Download Automation Agent] *************************************
+2016-07-05 14:52:32,061 p=2890 u=holee |  changed: [192.168.241.143]
+2016-07-05 14:52:32,071 p=2890 u=holee |  changed: [192.168.241.142]
+2016-07-05 14:52:32,079 p=2890 u=holee |  TASK [install : Check for existing Automation Agent config file] ***************
+2016-07-05 14:52:32,722 p=2890 u=holee |  ok: [192.168.241.142]
+2016-07-05 14:52:32,738 p=2890 u=holee |  ok: [192.168.241.143]
+2016-07-05 14:52:32,741 p=2890 u=holee |  TASK [install : Back up Automation Agent config file if exists] ****************
+2016-07-05 14:52:32,832 p=2890 u=holee |  skipping: [192.168.241.142]
+2016-07-05 14:52:32,846 p=2890 u=holee |  skipping: [192.168.241.143]
+2016-07-05 14:52:32,852 p=2890 u=holee |  TASK [install : Install automation agent] **************************************
+2016-07-05 14:52:35,173 p=2890 u=holee |  changed: [192.168.241.143]
+2016-07-05 14:52:35,188 p=2890 u=holee |  changed: [192.168.241.142]
+2016-07-05 14:52:35,191 p=2890 u=holee |  TASK [install : Configure Automation Agent config file] ************************
+2016-07-05 14:52:35,722 p=2890 u=holee |  changed: [192.168.241.142]
+2016-07-05 14:52:35,729 p=2890 u=holee |  changed: [192.168.241.143]
+2016-07-05 14:52:35,731 p=2890 u=holee |  TASK [install : Collect status on /data directory] *****************************
+2016-07-05 14:52:36,128 p=2890 u=holee |  ok: [192.168.241.143]
+2016-07-05 14:52:36,140 p=2890 u=holee |  ok: [192.168.241.142]
+2016-07-05 14:52:36,144 p=2890 u=holee |  TASK [install : If /data exists, set ownership to 'mongod'] ********************
+2016-07-05 14:52:36,208 p=2890 u=holee |  skipping: [192.168.241.142]
+2016-07-05 14:52:36,216 p=2890 u=holee |  skipping: [192.168.241.143]
+2016-07-05 14:52:36,218 p=2890 u=holee |  TASK [install : If /data not exists, create directory and set ownership to 'mongod'] ***
+2016-07-05 14:52:36,648 p=2890 u=holee |  changed: [192.168.241.143]
+2016-07-05 14:52:36,665 p=2890 u=holee |  changed: [192.168.241.142]
+2016-07-05 14:52:36,668 p=2890 u=holee |  TASK [install : Start Automation Agent, and enable start on boot] **************
+2016-07-05 14:52:37,335 p=2890 u=holee |  changed: [192.168.241.142]
+2016-07-05 14:52:37,356 p=2890 u=holee |  changed: [192.168.241.143]
+2016-07-05 14:52:37,391 p=2890 u=holee |  TASK [install : Confirm Automation Agent is running] ***************************
+2016-07-05 14:52:37,892 p=2890 u=holee |  ok: [192.168.241.143]
+2016-07-05 14:52:37,901 p=2890 u=holee |  ok: [192.168.241.142]
+2016-07-05 14:52:37,907 p=2890 u=holee |  PLAY RECAP *********************************************************************
+2016-07-05 14:52:37,907 p=2890 u=holee |  192.168.241.142            : ok=9    changed=5    unreachable=0    failed=0   
+2016-07-05 14:52:37,907 p=2890 u=holee |  192.168.241.143            : ok=9    changed=5    unreachable=0    failed=0   
+2016-07-06 16:07:28,615 p=64168 u=holee |  PLAY [Playbook to install Automation Agent] ************************************
+2016-07-06 16:07:28,901 p=64168 u=holee |  TASK [setup] *******************************************************************
+2016-07-06 16:07:31,538 p=64168 u=holee |  fatal: [192.168.241.143]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-07-06 16:07:31,545 p=64168 u=holee |  PLAY RECAP *********************************************************************
+2016-07-06 16:07:31,546 p=64168 u=holee |  192.168.241.143            : ok=0    changed=0    unreachable=1    failed=0   
+2016-07-06 16:09:15,257 p=64220 u=holee |  PLAY [Playbook to install Automation Agent] ************************************
+2016-07-06 16:09:15,390 p=64220 u=holee |  TASK [setup] *******************************************************************
+2016-07-06 16:09:16,658 p=64220 u=holee |  fatal: [192.168.241.143]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-07-06 16:09:16,666 p=64220 u=holee |  PLAY RECAP *********************************************************************
+2016-07-06 16:09:16,667 p=64220 u=holee |  192.168.241.143            : ok=0    changed=0    unreachable=1    failed=0   
+2016-07-06 16:14:30,483 p=65049 u=holee |   [ERROR]: User interrupted execution
+

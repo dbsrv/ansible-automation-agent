@@ -8,5 +8,5 @@
       default: "Y"
 
   roles:
-    - { role: preflight, when: run_preflight == "Y" }
+    - { role: preflight, when: run_preflight == "Y" or run_preflight == "y" }
     - { role: install }
