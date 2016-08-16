@@ -56,7 +56,7 @@ server2
 ```
 (replace `server1`, `server2`, ...`serverN`, with FQDN or IP address of remote servers)
 
-You can also use patterns to add multiple servers, e.g.
+You can also use [patterns](http://docs.ansible.com/ansible/intro_patterns.html) to add multiple servers, e.g.
 ```
 [servers]
 server[1-10]
