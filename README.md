@@ -56,6 +56,13 @@ server2
 ```
 (replace `server1`, `server2`, ...`serverN`, with FQDN or IP address of remote servers)
 
+You can also use patterns to add multiple servers, e.g.
+```
+[servers]
+server[1-10]
+```
+This will add `server1` thru `server10`.
+
 **2)** Edit default variables in `roles/install/defaults/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
 ```
 vim roles/install/defaults/main.yml
