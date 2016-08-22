@@ -23,7 +23,7 @@ sudo yum install -y ansible
 
 Alternative:  
 If the host is in prod and does not have internet access, you can install Ansible on a (Linux) jumpbox. Or alternatively, download zipped Ansible package to the jumpbox, then transfer to the host in prod:  
-<url>
+https://github.com/dbsrv/rawfiles/raw/master/ansiblepkg.tar.gz
 
 After transfer to the host in prod, do a yum localinstall:
 ```bash
