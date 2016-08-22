@@ -21,6 +21,7 @@ sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6
 sudo yum install -y ansible
 ```
 
+Alternative:  
 If the host is in prod and does not have internet access, you can install Ansible on a (Linux) jumpbox. Or alternatively, download and extract this zipped Ansible repo to the jumpbox, then transfer to the host in prod:  
 <url>
 
