@@ -9,7 +9,7 @@ For more on Ansible, read [How Ansible Works](https://www.ansible.com/how-ansibl
 ## Usage
 
 ### Install Ansible
-You'll need a dedicated host to run Ansible. You can use the host where Ops Manager is installed. If Ops Manager does not have internet access, install Ansible on a (Linux) jumpbox. Follow [installation guide](http://docs.ansible.com/ansible/intro_installation.html#latest-release-via-yum), or these two easy steps:
+You'll need a dedicated host to run Ansible (you can use the host where Ops Manager is installed). Follow [installation guide](http://docs.ansible.com/ansible/intro_installation.html#latest-release-via-yum), or these two easy steps:
 
 **1)** Configure EPEL
 ```bash
@@ -21,8 +21,8 @@ sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6
 sudo yum install -y ansible
 ```
 
-Alternatively, download and extract this zipped Ansible repo:  
-https://github.com/dbsrv/ansible-automation-agent/raw/master/roles/preflight/files/ansiblepkg.tar.gz
+If the host is in prod and does not have internet access, you can install Ansible on a (Linux) jumpbox. Or alternatively, download and extract this zipped Ansible repo to the jumpbox, then transfer to the host in prod:  
+<url>
 
 Do a yum localinstall:
 ```bash
