@@ -5,10 +5,6 @@
   register: openssl_status
   failed_when: False
 
-- name: Perform Yum Update
-  command: yum update -y
-  when: "'not installed' in openssl_status.stdout"
-
 - name: Download OpenSSL (openssl-1.0.1e-42.el6.x86_64.rpm)
   copy: src=openssl-1.0.1e-42.el6.x86_64.rpm dest=/tmp/openssl-1.0.1e-42.el6.x86_64.rpm
   when: "'1.0.1e' not in openssl_status.stdout"
