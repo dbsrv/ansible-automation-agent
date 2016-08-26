@@ -11,12 +11,12 @@ For more on Ansible, read [How Ansible Works](https://www.ansible.com/how-ansibl
 ### Install Ansible
 You'll need a dedicated host to run Ansible (you can use the host where Ops Manager is installed). Follow [installation guide](http://docs.ansible.com/ansible/intro_installation.html#latest-release-via-yum), or these two easy steps:
 
-**1)** Configure EPEL
+#### 1) Configure EPEL
 ```bash
 ## RHEL/CentOS ##
 sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 ```
-**2)** Install Ansible
+#### 2) Install Ansible
 ```bash
 sudo yum install -y ansible
 ```
@@ -33,7 +33,7 @@ sudo yum localinstall ansiblepkg/*.rpm
 ```
 
 ### Checkout repo
-#### 1) Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository  
+#### Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository  
 Install Git if it is not yet installed
 ```
 sudo yum install git
@@ -46,7 +46,7 @@ cd ansible-automation-agent
 If the host that runs Ansible has no http access, you can checkout the repository at another server, zip it, and transfer back to the host.  
 
 ### Run playbook
-**1)** Edit list of remote `hosts`, e.g.
+#### 1) Edit list of remote `hosts`, e.g.
 ```
 vim hosts
 ```
@@ -64,7 +64,7 @@ server[1-10]
 ```
 This will add `server1` thru `server10`.
 
-**2)** Edit default variables in `roles/install/defaults/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
+#### 2) Edit default variables in `roles/install/defaults/main.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
 ```
 vim roles/install/defaults/main.yml
 ```
@@ -87,7 +87,7 @@ max_log_files:        10
 max_log_file_size:    268435456
 ```
 
-**3)** (Optional but recommended) Check status on remote `hosts`
+#### 3) (Optional but recommended) Check status on remote `hosts`
 
 **Check status on Automation Agent**:  
 Automation Agent should be not installed or not running. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
@@ -114,7 +114,7 @@ Install/Update OpenSSL? [Y]: N
 ```
 You would have to manually install/update OpenSSL on each host.
 
-**4)** Run playbook
+#### 4) Run playbook
 ```bash
 ansible-playbook -i hosts install.yml --user johnny
 ```
