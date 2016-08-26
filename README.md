@@ -105,6 +105,12 @@ mongodb-mms-automation-agent is NOT running
 ```
 If the result shows Automation Agent is already running on a remote host. You should take it off the list of `hosts` and inspect it manually. It may be already automated by Ops Manager.
 
+**Check status on OpenSSL version**:  
+OpenSSL needs to be on version 1.0.1e or higher. CentOS 6.3 usually comes with a lower version 1.0.0 and needs OpenSSL updated. CentOS 6.4 or higher does not have this issue.
+```bash
+ansible all -i hosts -a "openssl version" --user johnny
+```
+
 **Check status on SELinux**:  
 ```bash
 ansible all -i hosts -a "sestatus" --user johnny
@@ -114,12 +120,6 @@ If SELinux is enabled, *preflight* role would result in error. You can skip *pre
 Install/Update OpenSSL? [Y]: N
 ```
 You would have to manually install/update OpenSSL on each host.
-
-**Check status on OpenSSL version**:  
-OpenSSL needs to be on version 1.0.1e or higher. CentOS 6.3 usually comes with a lower version 1.0.0 and needs OpenSSL updated. CentOS 6.4 or higher does not have this issue.
-```bash
-ansible all -i hosts -a "openssl version" --user johnny
-```
 
 #### 4) Run playbook
 ```bash
