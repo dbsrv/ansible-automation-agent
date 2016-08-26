@@ -112,6 +112,7 @@ ansible all -i hosts -a "openssl version" --user johnny
 ```
 
 **Check status on SELinux**:  
+SELinux should preferrably be disabled.
 ```bash
 ansible all -i hosts -a "sestatus" --user johnny
 ```
