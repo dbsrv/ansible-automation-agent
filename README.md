@@ -11,17 +11,18 @@ For more on Ansible, read [How Ansible Works](https://www.ansible.com/how-ansibl
 ### Install Ansible
 You'll need a dedicated host to run Ansible (you can use the host where Ops Manager is installed). Follow [installation guide](http://docs.ansible.com/ansible/intro_installation.html#latest-release-via-yum), or these two easy steps:
 
-#### 1) Configure EPEL
+#### On server **with** http access
+**1)** Configure EPEL
 ```bash
 ## RHEL/CentOS ##
 sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 ```
-#### 2) Install Ansible
+**2)** Install Ansible
 ```bash
 sudo yum install -y ansible
 ```
 
-Alternative:  
+#### On server **without** http access
 If the host is in prod and does not have internet access, you can install Ansible on a (Linux) jumpbox. Or alternatively, download zipped Ansible package to the jumpbox, then transfer to the host in prod:  
 https://github.com/dbsrv/rawfiles/raw/master/ansiblepkg.tar.gz
 
@@ -113,6 +114,12 @@ If SELinux is enabled, *preflight* role would result in error. You can skip *pre
 Install/Update OpenSSL? [Y]: N
 ```
 You would have to manually install/update OpenSSL on each host.
+
+**Check status on OpenSSL version**
+OpenSSL needs to be on version 1.0.1e or higher. CentOS 6.3 usually comes with a lower version 1.0.0 and needs OpenSSL updated. CentOS 6.4 or higher does not have this issue.
+```bash
+ansible all -i hosts -a "openssl version" --user johnny
+```
 
 #### 4) Run playbook
 ```bash
