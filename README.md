@@ -33,7 +33,7 @@ sudo yum localinstall ansiblepkg/*.rpm
 ```
 
 ### Checkout repo
-**1)** Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository  
+#### Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository  
 Install Git if it is not yet installed
 ```
 sudo yum install git
