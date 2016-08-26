@@ -115,7 +115,7 @@ Install/Update OpenSSL? [Y]: N
 ```
 You would have to manually install/update OpenSSL on each host.
 
-**Check status on OpenSSL version**
+**Check status on OpenSSL version**:  
 OpenSSL needs to be on version 1.0.1e or higher. CentOS 6.3 usually comes with a lower version 1.0.0 and needs OpenSSL updated. CentOS 6.4 or higher does not have this issue.
 ```bash
 ansible all -i hosts -a "openssl version" --user johnny
