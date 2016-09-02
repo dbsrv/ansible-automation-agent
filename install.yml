@@ -10,3 +10,19 @@
   roles:
     - { role: preflight, when: run_preflight == "Y" or run_preflight == "y" }
     - { role: install }
+
+  vars:
+    ## Automation Agent file path
+    automation_agent_pkg: http://192.168.241.134:8080/download/agent/automation/mongodb-mms-automation-agent-manager-latest.x86_64.rpm
+
+    ## Automation Agent configuration (required)
+    mms_group_id:       "576862ffec2ea1c7bee83576"
+    mms_api_key:        "b49139e766a659764b006027cc19ce80"
+    mms_base_url:       "http://192.168.241.134:8080"
+
+    ## Automation Agent configuration (optional)
+    mms_config_backup:  "/var/lib/mongodb-mms-automation/mms-cluster-config-backup.json"
+    log_file:           "/var/log/mongodb-mms-automation/automation-agent.log"
+    log_level:          "INFO"
+    max_log_files:      10
+    max_log_file_size:  268435456
