@@ -61,7 +61,7 @@ server2
 You can also use [patterns](http://docs.ansible.com/ansible/intro_patterns.html) to add multiple servers, e.g.
 ```
 [servers]
-server[1-10]
+server[1:10]
 ```
 This will add `server1` thru `server10`.
 
