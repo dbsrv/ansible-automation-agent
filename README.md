@@ -89,6 +89,13 @@ vars:
 
 #### 3) (Optional but recommended) Check status on remote `hosts`
 
+**Check CentOS version**:  
+Check CentOS version. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
+```bash
+ansible all -i hosts -a "cat /etc/centos-release" --user johnny
+(replace `johnny` with your username) 
+```
+
 **Check status on Automation Agent**:  
 Automation Agent should be not installed or not running. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
 ```bash
