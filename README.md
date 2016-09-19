@@ -67,7 +67,7 @@ This will add `server1` thru `server10`.
 
 #### 2) Edit variables in `install.yml`. Variables can be obtained in Ops Manager > Settings > Agents.
 ```
-vim roles/install/defaults/main.yml
+vim install.yml
 ```
 ```
 vars:
