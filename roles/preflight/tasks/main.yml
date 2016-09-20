@@ -5,7 +5,11 @@
   register: openssl_status
   failed_when: False
 
-- name: Perform Yum Update
+- name: Install Make, dependency required for OpenSSL
+  command: yum install -y make
+  when: "'1.0.1e' not in openssl_status.stdout"
+  
+- name: Yum update OpenSSL
   command: yum update -y openssl
   when: "'1.0.1e' not in openssl_status.stdout"
 
