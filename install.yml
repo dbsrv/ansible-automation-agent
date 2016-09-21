@@ -4,8 +4,8 @@
   hosts: all
   vars_prompt:
     - name: run_preflight
-      prompt: "Install/Update OpenSSL?"
-      default: "Y"
+      prompt: "Install/Update OpenSSL? (N = no, Y = yes)"
+      default: "N"
 
   roles:
     - { role: preflight, when: run_preflight == "Y" or run_preflight == "y" }
