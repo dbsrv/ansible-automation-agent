@@ -29,7 +29,7 @@ https://github.com/dbsrv/rawfiles/raw/master/ansiblepkg.tar.gz
 After transfer to the host in prod, do a yum localinstall:
 ```bash
 sudo mkdir ansiblepkg
-sudo tar -zxvf ansiblepkg.tar.gz ansiblepkg/
+sudo tar -zxvf ansiblepkg.tgz ansiblepkg/
 sudo yum localinstall ansiblepkg/*.rpm
 ```
 
@@ -44,7 +44,19 @@ git init
 git clone https://github.com/dbsrv/ansible-automation-agent.git
 cd ansible-automation-agent
 ```
-If the host that runs Ansible has no http access, you can checkout the repository at another server, zip it, and transfer back to the host.  
+If the host that runs Ansible has no http access, you can checkout the repository at another server, zip it, and transfer back to the host.
+
+On server with http access, download Git repository and tar it up:
+```
+git init
+git clone https://github.com/dbsrv/ansible-automation-agent.git
+tar -zcvf ansible-automation-agent.tgz ansible-automation-agent/
+```
+Transfer to offline server, and untar:
+```
+sudo mkdir ansible-automation-agent
+sudo tar -zxvf ansiblepkg.tgz ansible-automation-agent/
+```
 
 ### Run playbook
 #### 1) Edit list of remote `hosts`, e.g.
