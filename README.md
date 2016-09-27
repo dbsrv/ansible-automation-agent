@@ -35,6 +35,8 @@ sudo yum localinstall ansiblepkg/*.rpm
 
 ### Checkout repo
 #### Prepare [Git](http://rogerdudler.github.io/git-guide/) and checkout this repository  
+
+#### On server **with** http access
 Install Git if it is not yet installed
 ```
 sudo yum install git
@@ -44,6 +46,8 @@ git init
 git clone https://github.com/dbsrv/ansible-automation-agent.git
 cd ansible-automation-agent
 ```
+
+#### On server **without** http access
 If the host that runs Ansible has no http access, you can checkout the repository at another server, zip it, and transfer back to the host.
 
 On server with http access, download Git repository and tar it up:
