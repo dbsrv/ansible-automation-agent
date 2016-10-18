@@ -39,9 +39,3 @@
 
 - name: Start Automation Agent, and enable start on boot
   service: name=mongodb-mms-automation-agent state=restarted enabled=yes
-
-- name: Confirm Automation Agent is running
-  command: service mongodb-mms-automation-agent status
-  register: agent_status
-  failed_when: "'NOT' in agent_status.stdout"
-  changed_when: False
