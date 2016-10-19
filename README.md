@@ -111,6 +111,7 @@ Check CentOS version. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_ad
 ansible all -i hosts -a "cat /etc/centos-release" --user johnny
 (replace `johnny` with your username) 
 ```
+Note that CentOS 6.X and CentOS 7.X have different package download path. E.g. CentOS 6.X is `mongodb-mms-automation-agent-manager-<vesion>.x86_64.rpm` while CentOS 7.X is `mongodb-mms-automation-agent-manager-<version>.x86_64.rhel7.rpm`
 
 **Check status on Automation Agent**:  
 Automation Agent should be not installed or not running. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
