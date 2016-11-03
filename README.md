@@ -108,7 +108,7 @@ vars:
 **Check CentOS version**:  
 Check CentOS version. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
 ```bash
-ansible all -i hosts -a "cat /etc/centos-release" --user johnny
+ansible all -i hosts -a "cat /etc/centos-release" --user johnny --ask-pass
 (replace `johnny` with your username) 
 ```
 Note that CentOS 6.X and CentOS 7.X have different package download path. E.g. CentOS 6.X is `mongodb-mms-automation-agent-manager-<vesion>.x86_64.rpm` while CentOS 7.X is `mongodb-mms-automation-agent-manager-<version>.x86_64.rhel7.rpm`
@@ -116,7 +116,7 @@ Note that CentOS 6.X and CentOS 7.X have different package download path. E.g. C
 **Check status on Automation Agent**:  
 Automation Agent should be not installed or not running. Run this [ad-hoc](http://docs.ansible.com/ansible/intro_adhoc.html) Ansible command:
 ```bash
-ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
+ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny --ask-pass
 (replace `johnny` with your username) 
 ```
 Results should be either:
@@ -131,13 +131,13 @@ If the result shows Automation Agent is already running on a remote host. You sh
 **Check status on OpenSSL version**:  
 OpenSSL needs to be on version 1.0.1e or higher. CentOS 6.3 usually comes with a lower version 1.0.0 and needs OpenSSL updated. CentOS 6.4 or higher does not have this issue.
 ```bash
-ansible all -i hosts -a "openssl version" --user johnny
+ansible all -i hosts -a "openssl version" --user johnny --ask-pass
 ```
 
 **Check status on SELinux**:  
 SELinux should preferrably be disabled.
 ```bash
-ansible all -i hosts -a "sestatus" --user johnny
+ansible all -i hosts -a "sestatus" --user johnny --ask-pass
 ```
 If SELinux is enabled, *preflight* role would result in error. You can skip *preflight* step when prompted:
 ```bash
@@ -147,7 +147,7 @@ You would have to manually install/update OpenSSL on each host.
 
 #### 4) Run playbook
 ```bash
-ansible-playbook -i hosts install.yml --user johnny
+ansible-playbook -i hosts install.yml --user johnny --ask-pass
 ```
 Enter SSH password, and SUDO password (press enter again to use same password as ssh). Choose whether to install or update OpenSSL (default Y = Yes, N = No, case sensitive)
 ```bash
@@ -157,7 +157,7 @@ Install/Update OpenSSL? [Y]:
 ```
 ### Example Output
 ```bash
-johnny@server1:~/ansible$ ansible-playbook -i hosts install.yml --user johnny
+johnny@server1:~/ansible$ ansible-playbook -i hosts install.yml --user johnny --ask-pass
 SSH password: 
 SUDO password[defaults to SSH password]: 
 Install/Update OpenSSL? [Y]:
@@ -219,7 +219,7 @@ server1            : ok=7    changed=4    unreachable=0    failed=0
 ### Verify Installation
 Verify installation with:
 ```bash
-ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny
+ansible all -i hosts -a "service mongodb-mms-automation-agent status" --user johnny --ask-pass
 ```
 You should see successful messages:
 ```
@@ -228,14 +228,12 @@ mongodb-mms-automation-agent is running
 ```
 
 ### Tips
-Logs are kept in `log/playbook.log`  
-
 If automation agent fails to start, refer to log file at Ops Manager console, or at  
 `sudo tail -n 200 /var/log/mongodb-mms-automation/automation-agent-fatal.log`
 
 For troubleshooting purpose, run commands `-v`, up to `-vvvv`, to increase verbosity. E.g
 ```
-ansible-playbook -i hosts install.yml --user johnny -vvvv
+ansible-playbook -i hosts install.yml --user johnny --ask-pass -vvvv
 ```
 
 ### Ansible Config
@@ -245,12 +243,12 @@ This playbook uses customized `ansible.cfg`. Leave it as it is, or modify to fit
 host_key_checking =   False
 retry_files_enabled = False
 log_path =            ./log/playbook.log
-ask_pass =            True
+#ask_pass =            True
 command_warnings =    False
 
 [privilege_escalation]
-become =              True
-become_ask_pass =     True
+#become =              True
+#become_ask_pass =     True
 ```
 [Description and full list of ansible config](http://docs.ansible.com/ansible/intro_configuration.html)
 
