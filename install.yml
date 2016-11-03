@@ -2,6 +2,7 @@
 
 - name: Playbook to install Automation Agent
   hosts: all
+  become: yes
   vars_prompt:
     - name: run_preflight
       prompt: "Install/Update OpenSSL? (N = no, Y = yes)"
