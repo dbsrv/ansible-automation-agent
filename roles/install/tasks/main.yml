@@ -37,5 +37,14 @@
   shell: mkdir /data && chown mongod:mongod /data
   when: data_dir.stat.exists == False
 
+- name: Check for libsasl2.so.2
+  stat:
+    path: /lib64/libsasl2.so.2
+  register: libsasl
+
+- name: Link libsasl2.so.2 to libsasl2.so.3.0.0
+  shell: ln -s /lib64/libsasl2.so.3.0.0 /lib64/libsasl2.so.2
+  when: libsasl.stat.islnk is not defined
+
 - name: Start Automation Agent, and enable start on boot
   service: name=mongodb-mms-automation-agent state=restarted enabled=yes

@@ -1,0 +1,95 @@
+2019-09-05 14:17:51,791 p=86552 u=root |  chelmontest002.karmalab.net | CHANGED | rc=0 >>
+CentOS Linux release 7.6.1810 (Core) 
+
+2019-09-05 14:17:51,791 p=86552 u=root |  chelmontest003.karmalab.net | CHANGED | rc=0 >>
+CentOS Linux release 7.6.1810 (Core) 
+
+2019-09-05 14:17:52,404 p=86552 u=root |  chelmontest004.karmalab.net | CHANGED | rc=0 >>
+CentOS Linux release 7.6.1810 (Core) 
+
+2019-09-05 14:18:17,887 p=86672 u=root |  chelmontest002.karmalab.net | FAILED | rc=4 >>
+Redirecting to /bin/systemctl status mongodb-mms-automation-agent.service
+Unit mongodb-mms-automation-agent.service could not be found.non-zero return code
+
+2019-09-05 14:18:17,966 p=86672 u=root |  chelmontest003.karmalab.net | FAILED | rc=4 >>
+Redirecting to /bin/systemctl status mongodb-mms-automation-agent.service
+Unit mongodb-mms-automation-agent.service could not be found.non-zero return code
+
+2019-09-05 14:18:18,417 p=86672 u=root |  chelmontest004.karmalab.net | FAILED | rc=4 >>
+Redirecting to /bin/systemctl status mongodb-mms-automation-agent.service
+Unit mongodb-mms-automation-agent.service could not be found.non-zero return code
+
+2019-09-05 14:20:29,974 p=86899 u=root |  chelmontest003.karmalab.net | CHANGED | rc=0 >>
+OpenSSL 1.0.2k-fips  26 Jan 2017
+
+2019-09-05 14:20:29,976 p=86899 u=root |  chelmontest002.karmalab.net | CHANGED | rc=0 >>
+OpenSSL 1.0.2k-fips  26 Jan 2017
+
+2019-09-05 14:20:30,434 p=86899 u=root |  chelmontest004.karmalab.net | CHANGED | rc=0 >>
+OpenSSL 1.0.2k-fips  26 Jan 2017
+
+2019-09-05 14:21:02,371 p=87005 u=root |  PLAY [Playbook to install Automation Agent] **********************************************************************************************************************************************************************************************
+2019-09-05 14:21:02,382 p=87005 u=root |  TASK [Gathering Facts] *******************************************************************************************************************************************************************************************************************
+2019-09-05 14:21:07,806 p=87005 u=root |  ok: [chelmontest003.karmalab.net]
+2019-09-05 14:21:07,856 p=87005 u=root |  ok: [chelmontest002.karmalab.net]
+2019-09-05 14:21:08,563 p=87005 u=root |  ok: [chelmontest004.karmalab.net]
+2019-09-05 14:21:08,842 p=87005 u=root |  TASK [preflight : Collect status on OpenSSL] *********************************************************************************************************************************************************************************************
+2019-09-05 14:21:09,138 p=87005 u=root |  skipping: [chelmontest002.karmalab.net]
+2019-09-05 14:21:09,425 p=87005 u=root |  skipping: [chelmontest003.karmalab.net]
+2019-09-05 14:21:09,436 p=87005 u=root |  skipping: [chelmontest004.karmalab.net]
+2019-09-05 14:21:09,717 p=87005 u=root |  TASK [preflight : Install Make, dependency required for OpenSSL] *************************************************************************************************************************************************************************
+2019-09-05 14:21:10,013 p=87005 u=root |  skipping: [chelmontest002.karmalab.net]
+2019-09-05 14:21:10,304 p=87005 u=root |  skipping: [chelmontest003.karmalab.net]
+2019-09-05 14:21:10,316 p=87005 u=root |  skipping: [chelmontest004.karmalab.net]
+2019-09-05 14:21:10,597 p=87005 u=root |  TASK [preflight : Yum update OpenSSL] ****************************************************************************************************************************************************************************************************
+2019-09-05 14:21:10,930 p=87005 u=root |  skipping: [chelmontest002.karmalab.net]
+2019-09-05 14:21:11,221 p=87005 u=root |  skipping: [chelmontest003.karmalab.net]
+2019-09-05 14:21:11,232 p=87005 u=root |  skipping: [chelmontest004.karmalab.net]
+2019-09-05 14:21:11,515 p=87005 u=root |  TASK [preflight : Download OpenSSL (openssl-1.0.1e-42.el6.x86_64.rpm)] *******************************************************************************************************************************************************************
+2019-09-05 14:21:11,811 p=87005 u=root |  skipping: [chelmontest002.karmalab.net]
+2019-09-05 14:21:12,099 p=87005 u=root |  skipping: [chelmontest003.karmalab.net]
+2019-09-05 14:21:12,111 p=87005 u=root |  skipping: [chelmontest004.karmalab.net]
+2019-09-05 14:21:12,391 p=87005 u=root |  TASK [preflight : Install/Upgrade OpenSSL] ***********************************************************************************************************************************************************************************************
+2019-09-05 14:21:12,684 p=87005 u=root |  skipping: [chelmontest002.karmalab.net]
+2019-09-05 14:21:12,970 p=87005 u=root |  skipping: [chelmontest003.karmalab.net]
+2019-09-05 14:21:12,981 p=87005 u=root |  skipping: [chelmontest004.karmalab.net]
+2019-09-05 14:21:13,263 p=87005 u=root |  TASK [install : Download Automation Agent] ***********************************************************************************************************************************************************************************************
+2019-09-05 14:21:15,070 p=87005 u=root |  changed: [chelmontest002.karmalab.net]
+2019-09-05 14:21:15,183 p=87005 u=root |  changed: [chelmontest003.karmalab.net]
+2019-09-05 14:21:16,130 p=87005 u=root |  changed: [chelmontest004.karmalab.net]
+2019-09-05 14:21:16,415 p=87005 u=root |  TASK [install : Check for existing Automation Agent config file] *************************************************************************************************************************************************************************
+2019-09-05 14:21:17,153 p=87005 u=root |  ok: [chelmontest002.karmalab.net]
+2019-09-05 14:21:17,312 p=87005 u=root |  ok: [chelmontest003.karmalab.net]
+2019-09-05 14:21:17,596 p=87005 u=root |  ok: [chelmontest004.karmalab.net]
+2019-09-05 14:21:17,886 p=87005 u=root |  TASK [install : Back up Automation Agent config file if exists] **************************************************************************************************************************************************************************
+2019-09-05 14:21:18,177 p=87005 u=root |  skipping: [chelmontest002.karmalab.net]
+2019-09-05 14:21:18,463 p=87005 u=root |  skipping: [chelmontest003.karmalab.net]
+2019-09-05 14:21:18,474 p=87005 u=root |  skipping: [chelmontest004.karmalab.net]
+2019-09-05 14:21:18,762 p=87005 u=root |  TASK [install : Install automation agent] ************************************************************************************************************************************************************************************************
+2019-09-05 14:21:21,497 p=87005 u=root |  changed: [chelmontest003.karmalab.net]
+2019-09-05 14:21:21,517 p=87005 u=root |  changed: [chelmontest002.karmalab.net]
+2019-09-05 14:21:21,741 p=87005 u=root |  changed: [chelmontest004.karmalab.net]
+2019-09-05 14:21:22,025 p=87005 u=root |  TASK [install : Configure Automation Agent config file] **********************************************************************************************************************************************************************************
+2019-09-05 14:21:23,681 p=87005 u=root |  changed: [chelmontest003.karmalab.net]
+2019-09-05 14:21:23,684 p=87005 u=root |  changed: [chelmontest002.karmalab.net]
+2019-09-05 14:21:24,635 p=87005 u=root |  changed: [chelmontest004.karmalab.net]
+2019-09-05 14:21:24,915 p=87005 u=root |  TASK [install : Collect status on /data directory] ***************************************************************************************************************************************************************************************
+2019-09-05 14:21:26,357 p=87005 u=root |  ok: [chelmontest002.karmalab.net]
+2019-09-05 14:21:26,655 p=87005 u=root |  ok: [chelmontest003.karmalab.net]
+2019-09-05 14:21:27,515 p=87005 u=root |  ok: [chelmontest004.karmalab.net]
+2019-09-05 14:21:27,795 p=87005 u=root |  TASK [install : If /data exists, set ownership to 'mongod'] ******************************************************************************************************************************************************************************
+2019-09-05 14:21:28,088 p=87005 u=root |  skipping: [chelmontest002.karmalab.net]
+2019-09-05 14:21:28,379 p=87005 u=root |  skipping: [chelmontest003.karmalab.net]
+2019-09-05 14:21:28,391 p=87005 u=root |  skipping: [chelmontest004.karmalab.net]
+2019-09-05 14:21:28,674 p=87005 u=root |  TASK [install : If /data not exists, create directory and set ownership to 'mongod'] *****************************************************************************************************************************************************
+2019-09-05 14:21:30,013 p=87005 u=root |  changed: [chelmontest002.karmalab.net]
+2019-09-05 14:21:30,459 p=87005 u=root |  changed: [chelmontest003.karmalab.net]
+2019-09-05 14:21:31,283 p=87005 u=root |  changed: [chelmontest004.karmalab.net]
+2019-09-05 14:21:31,564 p=87005 u=root |  TASK [install : Start Automation Agent, and enable start on boot] ************************************************************************************************************************************************************************
+2019-09-05 14:21:33,605 p=87005 u=root |  changed: [chelmontest003.karmalab.net]
+2019-09-05 14:21:33,642 p=87005 u=root |  changed: [chelmontest002.karmalab.net]
+2019-09-05 14:21:34,298 p=87005 u=root |  changed: [chelmontest004.karmalab.net]
+2019-09-05 14:21:34,301 p=87005 u=root |  PLAY RECAP *******************************************************************************************************************************************************************************************************************************
+2019-09-05 14:21:34,301 p=87005 u=root |  chelmontest002.karmalab.net : ok=8    changed=5    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2019-09-05 14:21:34,301 p=87005 u=root |  chelmontest003.karmalab.net : ok=8    changed=5    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2019-09-05 14:21:34,301 p=87005 u=root |  chelmontest004.karmalab.net : ok=8    changed=5    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
